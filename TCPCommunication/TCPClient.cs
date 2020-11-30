@@ -22,6 +22,7 @@ namespace TCPCommunication
 
         public event Action<byte[]> receiveAction;
 
+
         public TCPClient(string ipAddress, int port)
         {
             this.ipAddress = ipAddress;
