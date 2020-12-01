@@ -3,10 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:WinForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:local="clr-namespace:UnityEmbeddedWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <WindowsFormsHost>
+                <WinForms:Panel x:Name="UnityPanel"></WinForms:Panel>
+            </WindowsFormsHost>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="Command_01" Content="명령1" Width="100" Margin="5" />
+                <Button x:Name="Command_02" Content="명령2" Width="100" Margin="5" />
+                <Button x:Name="Command_03" Content="명령3" Width="100" Margin="5" />
+                <TextBlock x:Name="CommandBlock" Text="" Width="auto" Height="50" Margin="5" Background="AliceBlue" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
