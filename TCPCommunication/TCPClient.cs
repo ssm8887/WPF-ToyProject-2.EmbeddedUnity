@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TCPCommunication
 {
-    class TCPClient
+    public class TCPClient
     {
         private string ipAddress;
         private int port;
@@ -107,6 +107,18 @@ namespace TCPCommunication
                     this.DisConnect(ref client);
                     break;
                 }
+
+            }
+        }
+
+        public void Send(byte[] msg)
+        {
+            try
+            {
+                networkStream.Write(msg, 0, msg.Length);
+            }
+            catch
+            {
 
             }
         }

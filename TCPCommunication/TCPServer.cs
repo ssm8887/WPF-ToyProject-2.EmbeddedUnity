@@ -13,6 +13,7 @@ namespace TCPCommunication
     {
         private string ipAddress;
         private int port;
+        TcpClient tcpClient;
 
         byte[] buff = new byte[1024];
 
@@ -36,17 +37,15 @@ namespace TCPCommunication
 
             while (true)
             {
-                TcpClient tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
+                tcpClient = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
 
-                await Task.Run(() => AsyncTCPProcess(tc));
+                await Task.Run(() => AsyncTCPProcess());
             }
         }
 
-        private async void AsyncTCPProcess(Object o)
+        private async void AsyncTCPProcess()
         {
-            TcpClient tc = o as TcpClient;
-
-            var stream = tc.GetStream();
+            var stream = tcpClient.GetStream();
 
             int recvBytes = 0;
 
@@ -56,20 +55,38 @@ namespace TCPCommunication
                 {
                     recvBytes = await stream.ReadAsync(buff, 0, buff.Length);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    Console.WriteLine("ReadAsync Error");
+                    Console.WriteLine($"ReadAsync Error : {ex.Message}");
+                    Console.WriteLine($"Stream Close");
                 }
 
                 if (recvBytes == 0)
                 {
                     stream.Close();
+                    break;
                 }
                 else
                 {
                     receiveAction?.Invoke(buff);
+                    recvBytes = 0;
                 }
 
+            }
+        }
+
+        public void Send(byte[] msg)
+        {
+            if (tcpClient is null)
+            {
+                return;
+            }
+
+            if (tcpClient.GetStream() != null)
+            {
+                NetworkStream stream = tcpClient.GetStream();
+
+                stream.Write(msg, 0, msg.Length);
             }
         }
 

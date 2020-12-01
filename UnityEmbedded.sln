@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPCommunication", "TCPCommunication\TCPCommunication.csproj", "{9A22D18C-DA03-4612-8E13-F1241D1A8F5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPServerTest", "TCPTest\TCPServerTest.csproj", "{4855ABF6-7CCD-4FEA-842F-571AC0258AF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPClientTest", "TCPClientTest\TCPClientTest.csproj", "{FBB5B307-7FB9-42B6-984A-15E114A244DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TCPTest", "TCPTest", "{8D860CCE-19C8-49A8-86CD-CB3403FB330C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +21,21 @@ Global
 		{9A22D18C-DA03-4612-8E13-F1241D1A8F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A22D18C-DA03-4612-8E13-F1241D1A8F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A22D18C-DA03-4612-8E13-F1241D1A8F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4855ABF6-7CCD-4FEA-842F-571AC0258AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4855ABF6-7CCD-4FEA-842F-571AC0258AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4855ABF6-7CCD-4FEA-842F-571AC0258AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4855ABF6-7CCD-4FEA-842F-571AC0258AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB5B307-7FB9-42B6-984A-15E114A244DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB5B307-7FB9-42B6-984A-15E114A244DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB5B307-7FB9-42B6-984A-15E114A244DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB5B307-7FB9-42B6-984A-15E114A244DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4855ABF6-7CCD-4FEA-842F-571AC0258AF1} = {8D860CCE-19C8-49A8-86CD-CB3403FB330C}
+		{FBB5B307-7FB9-42B6-984A-15E114A244DB} = {8D860CCE-19C8-49A8-86CD-CB3403FB330C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {043ABD77-8C63-49CC-A3C8-DA31012D031C}
