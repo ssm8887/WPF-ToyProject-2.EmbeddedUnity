@@ -17,6 +17,7 @@ namespace TCPClientTest
             var tcpClient = new TCPCommunication.TCPClient("127.0.0.1", 2000);
 
             tcpClient.Connect();
+            Console.WriteLine("Connect Success");
 
             while (true)
             {

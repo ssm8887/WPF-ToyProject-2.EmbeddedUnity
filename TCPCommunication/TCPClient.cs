@@ -87,13 +87,8 @@ namespace TCPCommunication
                 {
                     rcvBytes = await networkStream.ReadAsync(this.buff, 0, this.buff.Length).ConfigureAwait(false);
 
-                    if (rcvBytes == 0)
-                    {
-                        this.DisConnect(ref client);
-                        break;
-                    }
-                    else if (rcvBytes == 30)
-                    {
+                    if (rcvBytes != 0)
+                    { 
                         this.receiveAction?.Invoke(buff);
                         rcvBytes = 0;
                     }

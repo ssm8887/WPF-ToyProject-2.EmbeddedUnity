@@ -18,6 +18,8 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
 using System.Threading;
+using TCPCommunication;
+using static TCPCommunication.CommandEnum;
 
 namespace UnityEmbeddedWPF
 {
@@ -30,29 +32,30 @@ namespace UnityEmbeddedWPF
         {
             InitializeComponent();
 
-            Loaded += UnityControl_Load;
+            //Loaded += UnityControl_Load;
+            Loaded += TCPClient_Load;
             Activated += Form1_Activated;
             Deactivated += Form1_Deactivate;
             Closed += Form1_Closed;
 
-            Command_01.Click += Command_01_Click;
-            Command_02.Click += Command_02_Click;
-            Command_03.Click += Command_03_Click;
+            command_01.Click += Command_01_Click;
+            command_02.Click += Command_02_Click;
+            command_03.Click += Command_03_Click;
         }
 
         private void Command_01_Click(object sender, RoutedEventArgs e)
         {
-
+            tcpClient.Send(this.Write(CommandId.Command_01));
         }
 
         private void Command_02_Click(object sender, RoutedEventArgs e)
         {
-
+            tcpClient.Send(this.Write(CommandId.Command_02));
         }
 
         private void Command_03_Click(object sender, RoutedEventArgs e)
         {
-
+            tcpClient.Send(this.Write(CommandId.Command_03));
         }
     }
 }

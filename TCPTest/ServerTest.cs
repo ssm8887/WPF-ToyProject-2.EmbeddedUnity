@@ -22,7 +22,8 @@ namespace TCPTest
 
         private static void ConsoleWrite(byte[] buff)
         {
-            Console.WriteLine(buff);
+
+            Console.WriteLine(buff[0]);
         }
     }
 }

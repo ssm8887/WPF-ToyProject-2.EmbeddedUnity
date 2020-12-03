@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandEnum.cs" />
     <Compile Include="TCPClient.cs" />
     <Compile Include="TCPServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

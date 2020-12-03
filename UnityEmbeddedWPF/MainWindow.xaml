@@ -6,6 +6,7 @@
         xmlns:WinForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:local="clr-namespace:UnityEmbeddedWPF"
         mc:Ignorable="d"
+        x:Name="_this"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -20,12 +21,22 @@
         </Grid>
 
         <Grid Grid.Column="1">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="Command_01" Content="명령1" Width="100" Margin="5" />
-                <Button x:Name="Command_02" Content="명령2" Width="100" Margin="5" />
-                <Button x:Name="Command_03" Content="명령3" Width="100" Margin="5" />
-                <TextBlock x:Name="CommandBlock" Text="" Width="auto" Height="50" Margin="5" Background="AliceBlue" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="command_01" Content="명령1" Width="100" Margin="5" />
+                <Button x:Name="command_02" Content="명령2" Width="100" Margin="5" />
+                <Button x:Name="command_03" Content="명령3" Width="100" Margin="5" />
+                <TextBlock x:Name="commandBlock" Text="{Binding ElementName=_this, Path=CommandString}" Width="auto" Height="50" Margin="5" Background="AliceBlue" />
             </StackPanel>
+
+            <!--<StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBox Text="" Width="100" Height="25" Margin="10" />
+                <Button x:Name="connect" Content="Connect" Width="auto" Height="25" Margin="10" />
+            </StackPanel>-->
         </Grid>
     </Grid>
 </Window>
