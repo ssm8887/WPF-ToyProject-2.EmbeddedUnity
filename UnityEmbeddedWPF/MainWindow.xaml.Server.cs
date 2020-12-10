@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NamedPipeStreamCommunication;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -12,8 +13,9 @@ namespace UnityEmbeddedWPF
 {
     public partial class MainWindow : INotifyPropertyChanged
     {
-        private TCPClient tcpClient;
+        //private TCPClient tcpClient;
         private CommandId commandId;
+        private NamedPipeServer pipeServer;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -25,13 +27,18 @@ namespace UnityEmbeddedWPF
             }
         }
 
-        private void TCPClient_Load(object sender, EventArgs e)
+        private void Server_Load(object sender, EventArgs e)
         {
-            tcpClient = new TCPClient("127.0.0.1", 2000);
-            tcpClient.receiveAction += Read;
+            /// TCP Client 연결시
+            //tcpClient = new TCPClient("127.0.0.1", 2000);
+            //tcpClient.receiveAction += Read;
+            //Task.Run(() => tcpClient.Connect());
 
-            Task.Run(() => tcpClient.Connect());
-            
+            /// Named Pipe Server 연결시
+            pipeServer = new NamedPipeServer();
+            pipeServer.receiveAction += Read;
+
+            Task.Run(() => pipeServer.Connect());
         }
 
         public void Read(byte[] data)
@@ -64,6 +71,7 @@ namespace UnityEmbeddedWPF
                 result = ms.ToArray();
             }
 
+            pipeServer.Send(result);
             return result;
         }
 
@@ -72,25 +80,26 @@ namespace UnityEmbeddedWPF
             switch (commandId)
             {
                 case CommandId.Command_01:
-                    CommandString = "Command 01 Recveive";
-                    UpdateProperty("CommandString");
+                    CommandString = "Command 01 Receive";
+                    //UpdateProperty("CommandString");
                     break;
 
                 case CommandId.Command_02:
-                    CommandString = "Command 02 Recveive";
-                    UpdateProperty("CommandString");
+                    CommandString = "Command 02 Receive";
+                    //UpdateProperty("CommandString");
                     break;
 
                 case CommandId.Command_03:
-                    CommandString = "Command 03 Recveive";
-                    UpdateProperty("CommandString");
+                    CommandString = "Command 03 Receive";
+                    //UpdateProperty("CommandString");
                     break;
 
                 default:
-                    CommandString = "None Data Recveive";
-                    UpdateProperty("CommandString");
+                    CommandString = "None Data Receive";
+                    //UpdateProperty("CommandString");
                     break;
             }
+            UpdateProperty("CommandString");
         }
 
         private CommandId Command
@@ -104,5 +113,7 @@ namespace UnityEmbeddedWPF
         }
 
         public String CommandString { get; set; } = "None";
+
+
     }
 }

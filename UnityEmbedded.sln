@@ -13,6 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TCPTest", "TCPTest", "{8D86
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEmbeddedWPF", "UnityEmbeddedWPF\UnityEmbeddedWPF.csproj", "{63D2E9E8-32D7-4926-809B-2BE65A23F436}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamedPipeStreamCommunication", "NamedPipeStreamCommunication\NamedPipeStreamCommunication.csproj", "{7266052F-A881-4786-8BFB-A45791C4725C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NamedPipeTest", "NamedPipeTest", "{46B6A24A-A479-45CD-9707-9E9C739CB75B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamedPipeServerTest", "NamedPipeServerTest\NamedPipeServerTest.csproj", "{3CEF122F-CB45-4BC5-B744-BA54B6C19581}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +41,14 @@ Global
 		{63D2E9E8-32D7-4926-809B-2BE65A23F436}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63D2E9E8-32D7-4926-809B-2BE65A23F436}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63D2E9E8-32D7-4926-809B-2BE65A23F436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7266052F-A881-4786-8BFB-A45791C4725C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7266052F-A881-4786-8BFB-A45791C4725C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7266052F-A881-4786-8BFB-A45791C4725C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7266052F-A881-4786-8BFB-A45791C4725C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CEF122F-CB45-4BC5-B744-BA54B6C19581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEF122F-CB45-4BC5-B744-BA54B6C19581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEF122F-CB45-4BC5-B744-BA54B6C19581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEF122F-CB45-4BC5-B744-BA54B6C19581}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +56,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4855ABF6-7CCD-4FEA-842F-571AC0258AF1} = {8D860CCE-19C8-49A8-86CD-CB3403FB330C}
 		{FBB5B307-7FB9-42B6-984A-15E114A244DB} = {8D860CCE-19C8-49A8-86CD-CB3403FB330C}
+		{3CEF122F-CB45-4BC5-B744-BA54B6C19581} = {46B6A24A-A479-45CD-9707-9E9C739CB75B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {043ABD77-8C63-49CC-A3C8-DA31012D031C}

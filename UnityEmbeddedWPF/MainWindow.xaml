@@ -26,11 +26,13 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
-            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center">
                 <Button x:Name="command_01" Content="명령1" Width="100" Margin="5" />
                 <Button x:Name="command_02" Content="명령2" Width="100" Margin="5" />
                 <Button x:Name="command_03" Content="명령3" Width="100" Margin="5" />
-                <TextBlock x:Name="commandBlock" Text="{Binding ElementName=_this, Path=CommandString}" Width="auto" Height="50" Margin="5" Background="AliceBlue" />
+                <TextBlock x:Name="commandBlock" TextWrapping="Wrap" Text="{Binding ElementName=_this, Path=CommandString}" 
+                           Margin="10" TextAlignment="Center" VerticalAlignment="Center" FontSize="15"
+                           HorizontalAlignment="Stretch" Background="Black" Foreground="Red" />
             </StackPanel>
 
             <!--<StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">

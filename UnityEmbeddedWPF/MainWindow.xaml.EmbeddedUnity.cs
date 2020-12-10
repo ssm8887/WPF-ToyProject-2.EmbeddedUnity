@@ -1,23 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Forms;
-using System.Windows.Forms.Integration;
 using System.Threading;
+using System.Windows;
+using System.Windows.Interop;
 
 namespace UnityEmbeddedWPF
 {
@@ -42,6 +28,26 @@ namespace UnityEmbeddedWPF
 
         private void UnityControl_Load(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    ProcessStartInfo info = new ProcessStartInfo("ToyProject201127.exe");
+            //    info.UseShellExecute = true;
+            //    info.WindowStyle = ProcessWindowStyle.Minimized;
+            //    process = System.Diagnostics.Process.Start(info);
+            //    process.WaitForInputIdle();
+            //    this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.ApplicationIdle, appIdleEvent, this, null);
+            //    // Application Idle
+            //    WindowInteropHelper helper = new WindowInteropHelper(Window.GetWindow(this));
+            //    IntPtr ptr = helper.Handle;
+            //    SetParent(app.MainWindowHandle, helper.Handle);
+            //    SetWindowLong(new HandleRef(this, app.MainWindowHandle), GWL_STYLE, WS_VISIBLE);
+            //    MoveWindow(app.MainWindowHandle, (int)control.Margin.Left, (int)control.Margin.Top, (int)control.Width, (int)control.Height, true);
+            //}
+            //catch
+            //{
+
+            //}
+
             try
             {
                 process = new Process();
@@ -58,7 +64,7 @@ namespace UnityEmbeddedWPF
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message + ".\nCheck if Container.exe is placed next to Child.exe.");
+                System.Windows.MessageBox.Show(ex.Message + ".");
 
             }
         }

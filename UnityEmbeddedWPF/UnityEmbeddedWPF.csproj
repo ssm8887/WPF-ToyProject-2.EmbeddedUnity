@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -65,7 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.TCPClient.cs" />
+    <Compile Include="MainWindow.xaml.Server.cs" />
     <Compile Include="MainWindow.xaml.EmbeddedUnity.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -99,6 +100,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NamedPipeStreamCommunication\NamedPipeStreamCommunication.csproj">
+      <Project>{7266052f-a881-4786-8bfb-a45791c4725c}</Project>
+      <Name>NamedPipeStreamCommunication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCPCommunication\TCPCommunication.csproj">
       <Project>{9a22d18c-da03-4612-8e13-f1241d1a8f5a}</Project>
       <Name>TCPCommunication</Name>
