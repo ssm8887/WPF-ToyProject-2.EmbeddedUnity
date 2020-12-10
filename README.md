@@ -32,9 +32,9 @@
 | ------------ 		| ------------			|
 | ![image.png]() 	| ![image.png]() 		|
 
-| WPF -> Unity 		| 						|
-| ------------ 		| ------------ 			|
-| ![image.png]() 	|  						|
+| WPF -> Unity 		|
+| ------------ 		|
+| ![image.png]() 	|
 
 + ### 소스코드
 	+ Git – https://github.com/ssm8887/WPF-ToyProject-2.EmbeddedUnity
